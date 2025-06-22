@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Virtual Business Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transition: background 0.4s ease;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+      position: relative;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #2196f3;
+    }
+
+    h1 {
+      margin: 10px 0 5px;
+      font-size: 24px;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: normal;
+      color: #666;
+      transition: color 0.3s;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      transition: color 0.3s;
+    }
+
+    .links {
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: white;
+      background: #2196f3;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .links a:hover {
+      background: #1976d2;
+    }
+
+    #modeToggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 8px 12px;
+      border: none;
+      background: #2196f3;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    #modeToggle:hover {
+      background: #1976d2;
+    }
+
+    /* 🌙 DARK MODE STYLES */
+    body.dark {
+      background: linear-gradient(to right, #2e2e2e, #121212);
+    }
+
+    body.dark .card {
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    body.dark h1 {
+      color: #fff;
+    }
+
+    body.dark h3 {
+      color: #bbb;
+    }
+
+    body.dark p {
+      color: #ccc;
+    }
+
+    body.dark .links a {
+      background: #444;
+      color: white;
+    }
+
+    body.dark .links a:hover {
+      background: #666;
+    }
+
+    @media (max-width: 400px) {
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <button id="modeToggle">🌙 Dark Mode</button>
+    <img src="images/profilepic.jpg" alt="Profile Picture" />
+    <h1>Sneha</h1>
+    <h3>Web Developer & Tech Enthusiast</h3>
+    <p>💻 CSE undergrad | Data Science Enthusiast | Turning coffee into clean code & ideas into innovation | MDU '25</p>
+    
+    
+
+    <div class="links">
+      <a href="mailto:mnb@example.com">📧 Email</a>
+      <a href="https://www.linkedin.com" target="_blank">🔗 LinkedIn</a>
+      <a href="https://www.github.com" target="_blank">GitHUb</a>
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      toggleButton.textContent = body.classList.contains('dark') ? '🌞 Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+
+</body>
+
+</html>
